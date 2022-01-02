@@ -62,7 +62,8 @@ Sunucuyu çalıştırın
 
 ## Ekler
 
-Swagger Dökümantasyon: http://localhost:3000/documentation
+Swagger Dökümantasyon: http://localhost:3000/documentation <br>
+CodeFactor: [![CodeFactor](https://www.codefactor.io/repository/github/mercan/prisma_example/badge)](https://www.codefactor.io/repository/github/mercan/prisma_example)
 
 ## Kullanılan Teknolojiler
 
