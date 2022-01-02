@@ -66,7 +66,7 @@ Swagger Dökümantasyon: http://localhost:3000/documentation
 
 ## Kullanılan Teknolojiler
 
-**Sunucu:** Node, Fastify, Postgres, Prisma, Redis, Joi, JsonWebToken
+**Sunucu:** Node, Fastify, Postgres, Prisma, Redis, Swagger, Joi, JsonWebToken
 
 ## Ortam Değişkenleri
 
