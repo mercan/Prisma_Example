@@ -1,0 +1,55 @@
+{
+  "tags": ["auth"],
+  "body": {
+    "type": "object",
+    "required": ["email", "password"],
+    "properties": {
+      "email": {
+        "type": "string",
+        "format": "email",
+        "minLength": 3,
+        "maxLength": 200
+      },
+      "password": {
+        "type": "string",
+        "minLength": 6,
+        "maxLength": 200
+      }
+    }
+  },
+  "response": {
+    "200": {
+      "type": "object",
+      "description": "Successful response",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "format": "integer",
+          "default": 200
+        },
+        "message": {
+          "type": "string",
+          "default": "User logged in successfully"
+        },
+        "token": {
+          "type": "string"
+        }
+      }
+    },
+    "400": {
+      "description": "Bad request response",
+      "type": "object",
+      "properties": {
+        "statusCode": {
+          "type": "number",
+          "format": "integer",
+          "default": 400
+        },
+        "message": {
+          "type": "string",
+          "default": "Login failed; Invalid email or password"
+        }
+      }
+    }
+  }
+}
