@@ -12,7 +12,6 @@ module.exports = {
   redisHost: process.env.REDIS_HOST,
   redisPort: process.env.REDIS_PORT,
   redisPassword: process.env.REDIS_PASSWORD,
-  redisLabsURL: process.env.REDIS_URL_LABS,
-  redisUpstashURL: process.env.REDIS_URL_UPSTASH,
+  redisURL: process.env.REDIS_URL,
   swaggerRoutePrefix: "/documentation",
 };

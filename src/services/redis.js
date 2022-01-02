@@ -41,7 +41,7 @@ class RedisService {
 
 // Redis Config
 const options = {
-  url: config.redisUpstashURL,
+  url: config.redisURL,
   no_ready_check: true,
 };
 
