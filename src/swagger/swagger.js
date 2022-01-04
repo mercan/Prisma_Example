@@ -13,11 +13,8 @@ module.exports = {
     },
     servers: [
       {
-        url:
-          env === "development"
-            ? `http://localhost:${port}`
-            : "https://eklenecek.herokuapp.com",
-        description: env === "development" ? "Development" : "Production",
+        url: `http://localhost:${port}`,
+        description: "Development",
       },
     ],
     schemes: ["http", "https"],
