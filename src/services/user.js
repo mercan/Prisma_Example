@@ -107,6 +107,41 @@ class User {
     return { message: "Email verified successfully" };
   }
 
+  async changePassword(userId, currentPassword, newPassword) {
+    const userRecord = await this.prisma.user.findUnique({
+      where: { id: userId },
+    });
+
+    const isPasswordValid = bcrypt.compareSync(
+      currentPassword,
+      userRecord.password
+    );
+
+    if (!userRecord || !isPasswordValid) {
+      return { error: "Your password could not be changed" };
+    }
+
+    const isNewPasswordValid = bcrypt.compareSync(
+      newPassword,
+      userRecord.password
+    );
+
+    if (isNewPasswordValid) {
+      return {
+        error: "Your new password must be different from your current password",
+      };
+    }
+
+    await this.prisma.user.update({
+      where: { id: userId },
+      data: {
+        password: newPassword,
+      },
+    });
+
+    return { message: "Your password has been changed." };
+  }
+
   async sendEmailVerification({ email }) {
     const randomCode = randomBytes(32).toString("hex");
     const code = `${email}:${randomCode}`;

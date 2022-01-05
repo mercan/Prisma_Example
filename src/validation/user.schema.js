@@ -76,4 +76,26 @@ const loginSchema = Joi.object()
     "object.base": "Please fill out all required fields.",
   });
 
-module.exports = { registerSchema, loginSchema };
+const changePasswordSchema = Joi.object()
+  .keys({
+    currentPassword: Joi.string().required().min(6).max(200).messages({
+      "string.min": "Please enter a password with at least 6 characters.",
+      "string.max": "Please enter a password with at most 200 characters.",
+      "string.empty": "Please enter your password.",
+      "any.required": "Please enter your password.",
+    }),
+
+    password: Joi.string().required().min(6).max(200).messages({
+      "string.min": "Please enter a password with at least 6 characters.",
+      "string.max": "Please enter a password with at most 200 characters.",
+      "string.empty": "Please enter your password.",
+      "any.required": "Please enter your password.",
+    }),
+  })
+  .required()
+  .options(options)
+  .messages({
+    "object.base": "Please fill out all required fields.",
+  });
+
+module.exports = { registerSchema, loginSchema, changePasswordSchema };
