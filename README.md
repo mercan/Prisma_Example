@@ -60,7 +60,7 @@ Sunucuyu çalıştırın
 | :-------: | :------: | :---------: |
 |  `code`   | `string` | **Gerekli** |
 
-#### Email Doğrula
+#### Parola Değiştirme
 
 ```http
   POST /auth/changePassword
