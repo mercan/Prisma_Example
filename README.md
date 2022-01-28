@@ -32,11 +32,11 @@ Sunucuyu çalıştırın
   GET /auth/register
 ```
 
-| Parametre   | Tip      | Açıklama    |
-| :---------- | :------- | :---------- |
+|  Parametre  |   Tip    |  Açıklama   |
+| :---------: | :------: | :---------: |
 | `firstName` | `string` | **Gerekli** |
 | `lastName`  | `string` | **Gerekli** |
-| `email`     | `string` | **Gerekli** |
+|   `email`   | `string` | **Gerekli** |
 | `password`  | `string` | **Gerekli** |
 
 #### Giriş Yap
@@ -45,9 +45,9 @@ Sunucuyu çalıştırın
   POST /auth/login
 ```
 
-| Parametre  | Tip      | Açıklama    |
-| :--------- | :------- | :---------- |
-| `email`    | `string` | **Gerekli** |
+| Parametre  |   Tip    |  Açıklama   |
+| :--------: | :------: | :---------: |
+|  `email`   | `string` | **Gerekli** |
 | `password` | `string` | **Gerekli** |
 
 #### Email Doğrula
@@ -56,18 +56,29 @@ Sunucuyu çalıştırın
   GET /auth/verifyEmail
 ```
 
-| Parametre | Tip      | Açıklama    |
-| :-------- | :------- | :---------- |
-| `code`    | `string` | **Gerekli** |
+| Parametre |   Tip    |  Açıklama   |
+| :-------: | :------: | :---------: |
+|  `code`   | `string` | **Gerekli** |
+
+#### Email Doğrula
+
+```http
+  POST /auth/changePassword
+```
+
+|     Header      |     Parametre     |   Tip    |  Açıklama   |
+| :-------------: | :---------------: | :------: | :---------: |
+| `Authorization` |  `Bearer TOKEN`   | `string` | **Gerekli** |
+|                 | `currentPassword` | `string` | **Gerekli** |
+|                 |    `password`     | `string` | **Gerekli** |
 
 ## Ekler
 
-Swagger Dökümantasyon: http://localhost:3000/documentation <br>
-CodeFactor: [![CodeFactor](https://www.codefactor.io/repository/github/mercan/prisma_example/badge)](https://www.codefactor.io/repository/github/mercan/prisma_example)
+Swagger Dökümantasyon: http://localhost:3000/documentation
 
 ## Kullanılan Teknolojiler
 
-**Sunucu:** Node, Fastify, Postgres, Prisma, Redis, Swagger, Joi, JsonWebToken
+**Sunucu:** Node, Fastify, Prisma, Postgres, Redis, Joi, JsonWebToken
 
 ## Ortam Değişkenleri
 
